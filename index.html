@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f4c81">
+  <meta name="description" content="Create and download a polished daily homework diary for Peace School System.">
+  <title>Peace School Diary</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="image/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <section class="editor-panel" aria-labelledby="editorTitle">
+      <div class="panel-heading">
+        <p class="eyebrow">Peace School System</p>
+        <h1 id="editorTitle">Daily Homework Diary</h1>
+      </div>
+
+      <form id="diaryForm" class="diary-form">
+        <div class="field-grid">
+          <label>
+            <span>Class</span>
+            <input type="text" id="classInput" placeholder="e.g. Class 5-A" autocomplete="off">
+          </label>
+
+          <label>
+            <span>English</span>
+            <input type="text" id="engInput" placeholder="Homework details">
+          </label>
+
+          <label>
+            <span>Math</span>
+            <input type="text" id="mathInput" placeholder="Homework details">
+          </label>
+
+          <label>
+            <span>Science</span>
+            <input type="text" id="sciInput" placeholder="Homework details">
+          </label>
+
+          <label>
+            <span>General Knowledge</span>
+            <input type="text" id="gkInput" placeholder="Homework details">
+          </label>
+
+          <label>
+            <span>Social Studies</span>
+            <input type="text" id="sstInput" placeholder="Homework details">
+          </label>
+
+          <label>
+            <span>Urdu</span>
+            <input type="text" id="urduInput" class="urdu-input" placeholder="کام کی تفصیل">
+          </label>
+
+          <label>
+            <span>Islamiyat</span>
+            <input type="text" id="islInput" class="urdu-input" placeholder="کام کی تفصیل">
+          </label>
+        </div>
+
+        <label class="notes-field">
+          <span>Notes & Reminders</span>
+          <textarea id="notesInput" rows="4" placeholder="Announcements, test dates, or reminders"></textarea>
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="primary-action">Generate Diary</button>
+          <button type="button" id="downloadBtn" class="secondary-action">Download PNG</button>
+          <button type="button" id="clearBtn" class="ghost-action">Clear</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="preview-panel" aria-label="Diary preview">
+      <article class="diary" id="diary">
+        <header class="school-header">
+          <img src="image/logo.png" alt="Peace School System logo">
+          <div>
+            <h2>PEACE School System</h2>
+            <p class="tagline">Ocean of Knowledge</p>
+            <p class="contact">0323-7609572 | 0315-2739918</p>
+          </div>
+        </header>
+
+        <div class="diary-title">Daily Homework Diary</div>
+
+        <div class="info-row">
+          <span><strong>Class:</strong> <span id="classOut">-</span></span>
+          <span><strong>Day:</strong> <span id="day">-</span></span>
+          <span><strong>Date:</strong> <span id="date">-</span></span>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Subject</th>
+              <th scope="col">Homework</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>English</td><td id="eng">-</td></tr>
+            <tr><td>Math</td><td id="math">-</td></tr>
+            <tr><td>Science</td><td id="sci">-</td></tr>
+            <tr><td>General Knowledge</td><td id="gk">-</td></tr>
+            <tr><td>Social Studies</td><td id="sst">-</td></tr>
+            <tr><td class="urdu">اردو</td><td class="urdu" id="urdu">-</td></tr>
+            <tr><td class="urdu">اسلامیات</td><td class="urdu" id="isl">-</td></tr>
+          </tbody>
+        </table>
+
+        <section class="notes">
+          <strong>Notes & Reminders</strong>
+          <p id="notes">-</p>
+        </section>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
